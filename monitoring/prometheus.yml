@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['prometheus:9090']   # ✅ FIXED
+
+  - job_name: 'user-app'
+    static_configs:
+      - targets: ['user-app:3000']
+
+  - job_name: 'admin-app'
+    static_configs:
+      - targets: ['admin-app:3000']
